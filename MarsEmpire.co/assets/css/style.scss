@@ -26,7 +26,7 @@ html, body {
   width: 100vw;        /* force full width */
 
   /* Background image */
-  background-image: url("{{ '/assets/png/marsempire.png' | relative_url }}");
+  background-image: url("{{ '/assets/png/background.png' | relative_url }}");
   background-size: cover;      /* COVER the entire container */
   background-position: center; /* keep center visible */
   background-repeat: no-repeat;
@@ -38,69 +38,62 @@ html, body {
   text-align: center;
 }
 
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-  .hero-content p {
-    font-size: 1rem;
-  }
-}
-
-// /* Dark overlay for readability */
-// .hero::before {
-//   content: "";
-//   position: absolute;
-//   inset: 0;
-//   background: rgba(0,0,0,0.4);
-//   z-index: 1;
-// }
-
 .hero-content {
-  position: relative;
-  z-index: 2;
-  color: white;
+  display: flex;
+  flex-direction: column;      /* stack overlay, text, button */
+  align-items: center;
+  gap: 1rem;                   /* spacing between items */
   text-align: center;
-  padding: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
+  padding: 1rem 2rem;
 }
 
-/* Headings in hero */
+.hero-overlay {
+  width: 100%;                 /* spans full width */
+  height: auto;
+}
+
+/* Heading */
 .hero-content h1 {
+  font-family: 'Alta', sans-serif;
   font-size: 3rem;
+  margin: 0;
+  color: white;
   text-shadow: 0 3px 10px rgba(0,0,0,0.6);
 }
 
-/* Paragraphs in hero */
+/* Paragraph */
 .hero-content p {
   font-size: 1.25rem;
-  margin: 1rem 0 2rem;
+  margin: 0;
+  color: white;
 }
 
-/* CTA button in hero */
-.hero-content .cta-button {
+/* CTA button */
+.cta-button {
+  display: inline-block;
   padding: 0.75rem 2rem;
   background: #FF0030;
-  color: #fff;
+  color: white;
   text-decoration: none;
   font-weight: bold;
   border-radius: 8px;
   transition: background 0.3s ease;
 }
 
-.hero-content .cta-button:hover {
+.cta-button:hover {
   background: #cc0025;
 }
 
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 768px) {
   .hero-content h1 {
     font-size: 2.2rem;
   }
-
   .hero-content p {
     font-size: 1rem;
+  }
+  .hero-overlay {
+    max-width: 90%;
   }
 }
 
@@ -117,7 +110,7 @@ a:focus {
 
 /* Make titles in the main content red */
 .main-content h1 {
-  color: #000000; // #ff0030; /* RoyalLawX red - elegant, not neon */
+  color: #000000; // #ff0030; /* Mars red - elegant, not neon */
   font-weight: 700;
   letter-spacing: 0.5px;     /* optional */
 }
@@ -130,15 +123,16 @@ a:focus {
 
 /* Apply Red Hat Display globally */
 body {
-  font-family: "Red Hat Display", "Open Sans", Arial, sans-serif;
+  font-family: 'Alta', sans-serif;
+  // font-family: "Red Hat Display", "Open Sans", Arial, sans-serif;
 }
 
 /* Optional: heavier weight for headings */
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Red Hat Display", "Open Sans", Arial, sans-serif;
-  font-weight: 700;
-  letter-spacing: 1px; /* optional for a modern look */
-}
+// h2, h3, h4, h5, h6 {
+//   font-family: "Red Hat Display", "Open Sans", Arial, sans-serif;
+//   font-weight: 700;
+//   letter-spacing: 1px; /* optional for a modern look */
+// }
 
 /* Make nav links look like separate blocks */
 .page-header nav {
@@ -163,7 +157,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Hover effect */
 .page-header nav a:hover {
-  background: #ff0030;          /* RoyalLawX red */
+  background: #ff0030;          /* Mars red */
   border-color: #ff0030;
   color: #fff;
   transform: translateY(-2px);
