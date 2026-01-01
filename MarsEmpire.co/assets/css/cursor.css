@@ -1,0 +1,59 @@
+/* Floating, pulsing cursor dot */
+:root{
+  --cursor-size: 10px;
+  --cursor-hover-scale: 2.2;     /* how much bigger over links */
+  --cursor-down-scale: 0.8;      /* click feedback */
+  --cursor-color: 255,0,48;    /* red */
+  --cursor-ring-opacity: 0.35;
+  --cursor-dot-opacity: 0.92;
+  --cursor-z: 2147483647;
+}
+
+@media (hover: none), (pointer: coarse) {
+  /* Don’t show fake cursor on touch */
+  .cursor-dot{ display: none !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-dot::after { animation: none !important; }
+}
+
+.cursor-dot{
+  position: fixed;
+  top: 0; left: 0;
+  width: var(--cursor-size);
+  height: var(--cursor-size);
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: var(--cursor-z);
+  background: rgba(var(--cursor-color), var(--cursor-dot-opacity));
+  box-shadow: 0 0 12px rgba(var(--cursor-color), 0.35);
+  transform: translate(-50%, -50%);
+  will-change: transform, width, height, opacity;
+  /*mix-blend-mode: difference; /* nice glow on light/dark UIs */
+}
+
+.cursor-dot::after{
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  border: 2px solid rgba(var(--cursor-color), var(--cursor-ring-opacity));
+  animation: cursor-pulse 1.6s ease-out infinite;
+}
+
+.cursor-dot.is-hover{
+  width: calc(var(--cursor-size) * var(--cursor-hover-scale));
+  height: calc(var(--cursor-size) * var(--cursor-hover-scale));
+}
+
+.cursor-dot.is-down{
+  width: calc(var(--cursor-size) * var(--cursor-down-scale));
+  height: calc(var(--cursor-size) * var(--cursor-down-scale));
+}
+
+@keyframes cursor-pulse{
+  0%   { transform: scale(1);   opacity: 0.6; }
+  60%  { transform: scale(2.1); opacity: 0; }
+  100% { transform: scale(2.1); opacity: 0; }
+}
