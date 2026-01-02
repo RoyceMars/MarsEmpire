@@ -61,6 +61,23 @@ html, body {
   text-shadow: 0 3px 10px rgba(0,0,0,0.6);
 }
 
+/* Text blocks */
+.hero-text {
+  font-family: 'Marcellus', serif;
+  color: white;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: 2rem;
+  opacity: 0.9;
+}
+
 /* Paragraph */
 .hero-content p {
   font-size: 1.25rem;

@@ -337,6 +337,13 @@ html, body { margin: 0; padding: 0; height: 100%; width: 100%; }
 /* Heading */
 .hero-content h1 { font-family: 'Alta', sans-serif; font-size: 3rem; margin: 0; color: white; text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6); }
 
+/* Text blocks */
+.hero-text { font-family: 'Marcellus', serif; color: white; text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); }
+
+.hero-title { font-size: 4rem; font-weight: 700; }
+
+.hero-subtitle { font-size: 2rem; opacity: 0.9; }
+
 /* Paragraph */
 .hero-content p { font-size: 1.25rem; margin: 0; color: white; }
 
