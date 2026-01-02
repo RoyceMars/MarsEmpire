@@ -360,9 +360,11 @@ a:hover, a:focus { color: #ff0030; /* darker red on hover for better contrast */
 .main-content h2, .main-content h3 { color: #000000; }
 
 /* Apply Red Hat Display globally */
-body { font-family: 'Alta', sans-serif; }
+body { font-family: 'Marcellus', serif; letter-spacing: 1px; }
 
 /* Optional: heavier weight for headings */
+h2, h3, h4, h5, h6 { font-family: 'Marcellus', serif; font-weight: 700; letter-spacing: 1px; /* optional for a modern look */ }
+
 /* Make nav links look like separate blocks */
 .page-header nav { display: flex; flex-wrap: wrap; /* allows wrapping to new lines */ justify-content: center; /* centers the tiles */ gap: 10px; /* spacing between tiles */ margin-top: 15px; }
 
@@ -372,7 +374,7 @@ body { font-family: 'Alta', sans-serif; }
 .page-header nav a:hover { background: #ff0030; /* Mars red */ border-color: #ff0030; color: #fff; transform: translateY(-2px); }
 
 .join-hero { text-align: center; padding: 4rem 1rem; background-image: url("/assets/img/hero-bg.jpg"); background-size: cover; background-position: center; background-repeat: no-repeat; color: #fff; text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6); }
-.join-hero h1 { font-family: 'Alta', sans-serif; font-size: 3rem; margin-bottom: 1rem; }
+.join-hero h1 { font-family: 'Marcellus', serif; font-size: 3rem; margin-bottom: 1rem; }
 .join-hero p { font-size: 1.25rem; margin: 0; }
 
 .join-form-section { text-align: center; padding: 2rem 1rem; }
@@ -396,7 +398,7 @@ body { font-family: 'Alta', sans-serif; }
 /* Text on banner */
 .join-banner-content { position: relative; z-index: 2; text-align: center; color: white; }
 
-.join-banner-content h1 { font-family: 'Alta', sans-serif; font-size: 3rem; margin-bottom: 0.5rem; }
+.join-banner-content h1 { font-family: 'Marcellus', serif; font-size: 3rem; margin-bottom: 0.5rem; }
 
 .join-banner-content p { font-size: 1.2rem; }
 
@@ -405,3 +407,15 @@ body { font-family: 'Alta', sans-serif; }
 
 /* Remove Cayman padding for join page */
 .full-width-page section { padding-left: 0; padding-right: 0; }
+
+/* Prevent link styles from breaking layout */
+.banner-link:hover, .banner-link:focus { text-decoration: none; }
+
+/* Allow banner to be clickable */
+.banner-link { display: block; position: relative; z-index: 1000; /* VERY IMPORTANT */ text-decoration: none; }
+
+/* Ensure nothing blocks clicks */
+.join-banner { position: relative; z-index: 1001; pointer-events: auto; }
+
+/* Fix Cayman layout blocking clicks */
+.main-content { position: relative; z-index: 1; }

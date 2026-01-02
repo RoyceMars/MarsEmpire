@@ -123,16 +123,16 @@ a:focus {
 
 /* Apply Red Hat Display globally */
 body {
-  font-family: 'Alta', sans-serif;
-  // font-family: "Red Hat Display", "Open Sans", Arial, sans-serif;
+  font-family: 'Marcellus', serif;
+  letter-spacing: 1px;
 }
 
 /* Optional: heavier weight for headings */
-// h2, h3, h4, h5, h6 {
-//   font-family: "Red Hat Display", "Open Sans", Arial, sans-serif;
-//   font-weight: 700;
-//   letter-spacing: 1px; /* optional for a modern look */
-// }
+h2, h3, h4, h5, h6 {
+  font-family: 'Marcellus', serif;
+  font-weight: 700;
+  letter-spacing: 1px; /* optional for a modern look */
+}
 
 /* Make nav links look like separate blocks */
 .page-header nav {
@@ -174,7 +174,7 @@ body {
   text-shadow: 0 3px 10px rgba(0,0,0,0.6);
 
   h1 {
-    font-family: 'Alta', sans-serif;
+    font-family: 'Marcellus', serif;
     font-size: 3rem;
     margin-bottom: 1rem;
   }
@@ -296,7 +296,7 @@ body {
 }
 
 .join-banner-content h1 {
-  font-family: 'Alta', sans-serif;
+  font-family: 'Marcellus', serif;
   font-size: 3rem;
   margin-bottom: 0.5rem;
 }
@@ -314,4 +314,31 @@ body {
 .full-width-page section {
   padding-left: 0;
   padding-right: 0;
+}
+
+/* Prevent link styles from breaking layout */
+.banner-link:hover,
+.banner-link:focus {
+  text-decoration: none;
+}
+
+/* Allow banner to be clickable */
+.banner-link {
+  display: block;
+  position: relative;
+  z-index: 1000; /* VERY IMPORTANT */
+  text-decoration: none;
+}
+
+/* Ensure nothing blocks clicks */
+.join-banner {
+  position: relative;
+  z-index: 1001;
+  pointer-events: auto;
+}
+
+/* Fix Cayman layout blocking clicks */
+.main-content {
+  position: relative;
+  z-index: 1;
 }
