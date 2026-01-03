@@ -451,9 +451,9 @@ h2, h3, h4, h5, h6 {
 }
 
 .social-buttons {
-  display: grid;
-  grid-template-columns: repeat(5, auto);
-  gap: 12px;
+  display: flex;
   justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
 }
 
