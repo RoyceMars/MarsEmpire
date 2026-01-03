@@ -433,7 +433,7 @@ h2, h3, h4, h5, h6 { font-family: 'Marcellus', serif; font-weight: 700; letter-s
 /* SOCIAL BUTTONS */
 .social-buttons { display: flex; justify-content: center; gap: 16px; margin-top: 24px; flex-wrap: wrap; }
 
-.social-btn { width: 52px; height: 52px; border-radius: 12px; background: rgba(0, 0, 0, 0.75); display: flex; align-items: center; justify-content: center; transition: all 0.25s ease; text-decoration: none !important; }
+.social-btn { width: 52px; height: 52px; border-radius: 50%; background: rgba(0, 0, 0, 0.75); display: flex; align-items: center; justify-content: center; transition: all 0.25s ease; text-decoration: none !important; }
 
 .social-btn img { width: 22px; height: 22px; filter: brightness(0) invert(1); transition: transform 0.2s ease; }
 
